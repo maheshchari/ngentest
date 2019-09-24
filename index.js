@@ -54,6 +54,7 @@ parseTypescript(typescript).then(tsParsed => {
       break;
   }
   ejsData.functionTests = Object.assign({}, ejsData.functionTests, existingItBlocks);
+  delete ejsData['undefined'];
 
   const generated = ejs.render(ejsTemplate, ejsData).replace(/\n\s+$/gm, '\n');
   if (argv.spec) {

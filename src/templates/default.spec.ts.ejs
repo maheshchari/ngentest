@@ -1,6 +1,12 @@
+/* Copyright(C) 2015-2020 - Quantela Inc
+ * All Rights Reserved
+ * Unauthorized copying of this file via any medium is strictly prohibited
+ * See LICENSE file in the project root for full license information
+ */
+
 import { async } from '@angular/core/testing';
 <% for(var key in imports) { -%>
-import {<%- imports[key].map(el => `${el}`).join(', ') -%>} from '<%- key -%>';
+import { <%- imports[key].map(el => `${el}`).join(', ') -%> } from '<%- key -%>';
 <% } -%>
 
 describe('<%= typeof className === 'undefined' ? 'My Test' : className %>', () => {
